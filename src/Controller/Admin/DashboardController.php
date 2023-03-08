@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Valuation;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -35,13 +36,14 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Solidus Dashboard');
+            ->setTitle('Solidus Admin Dashboard');
     }
 
     public function configureMenuItems(): iterable
     {
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
+            MenuItem::linkToCrud('Valuations', 'fa fa-building-columns', Valuation::class),
         ];
     }
 }
