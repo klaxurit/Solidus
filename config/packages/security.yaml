@@ -9,6 +9,17 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+        app_notary_provider:
+            entity:
+                class: App\Entity\Notary
+                property: email
+        all_users:
+            chain:
+                providers: [app_notary_provider, app_user_provider]
+        # app_partner_provider:
+        #     entity:
+        #         class: App\Entity\Partner
+        #         property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

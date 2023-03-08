@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Notary;
 use App\Entity\Valuation;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -44,6 +45,7 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
             MenuItem::linkToCrud('Valuations', 'fa fa-building-columns', Valuation::class),
+            MenuItem::linkToCrud('Notaries', 'fa fa-scale-balanced', Notary::class),
         ];
     }
 }
